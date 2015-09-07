@@ -1,0 +1,27 @@
+@mixin font($family, $size, $color) {
+	font-family: $family;
+	font-size: $size;
+	color: $color;
+}
+@mixin all-center {
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+@mixin absolute-full-size {
+	position: absolute; top: 0; right: 0; left: 0; bottom: 0;
+	width: 100%; height: 100%;
+}
+
+@mixin in-line-list {
+	display: block;
+	list-style: none;
+	padding: 0; margin: 0;
+}
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

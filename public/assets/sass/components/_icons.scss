@@ -1,0 +1,40 @@
+/* ICONS & BUTTONS styles */
+
+.icon {
+	display: inline-block;
+	background-image: $ui-img;
+	&.controls {
+		width: 52px; height: 52px;
+		&.prev { background-position: 0px -12px; }
+		&.next { background-position: -66px -12px; }
+	}
+	&.triangle {
+		width: 7px; height: 4px;
+		&.bottom {
+			background-position: 0px 0px; 
+		}
+	}
+	&.social {
+		width: 29px; height: 29px;
+		&.vk { background-position: -1px -71px; }
+		&.fb { background-position: -41px -71px; }
+		&.tw { background-position: -82px -71px; }
+		&.odnokl { background-position: -123px -71px; }
+	}
+	&.phone {
+		&.black {
+			width: 15px; height: 16px;
+			background-position: 0px -108px;
+		}
+	}
+}
+
+.button {
+	display: inline-block;
+	background-image: $ui-img;
+	&.default-menu {
+		width: 60px; height: 60px;
+		background-position: -380px -6px;
+		cursor: pointer;
+	}
+}

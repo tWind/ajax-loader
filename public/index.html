@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+
+	<!-- BASE -->
+	<meta charset="utf-8">
+	<title>Start here!</title>
+
+	<!-- SEO -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<!-- MOBILE SPECIFIC -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- disable select tel. and skype numbers -->
+	<meta name="format-detection" content="telephone=no">
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+
+	<!-- FAVICONS -->
+	<link rel="icon" type="image/png" href="assets/images/favicon.ico">
+	<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+	<!-- FONT -->
+	<!-- <link rel="stylesheet" href="libs/fonts/stylesheet.css"> -->
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body class="main">
+<header>
+	<div class="container">
+		<div>
+			<h1>Header</h1>
+		</div>
+	</div>
+</header>
+<section>
+	<div class="container">
+		<nav class="l-1">
+			<ul>
+				<li><a href="assets/templates/lvl1__item__01.html">level 1</a></li>
+				<li><a href="assets/templates/lvl1__item__02.html">level 1</a></li>
+				<li><a href="assets/templates/lvl1__item__03.html">level 1</a></li>
+				<li><a href="assets/templates/lvl1__item__04.html">level 1</a></li>
+				<li><a href="assets/templates/lvl1__item__05.html">level 1</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>
+
+<div id="content">
+	<section>
+		<div class="container screen-lv2">
+			
+		</div>
+	</section>
+</div>
+
+<footer>
+	<div class="container">
+		<div>
+			<h2>Footer</h2>
+		</div>
+	</div>
+</footer>
+
+<!-- JS -->
+<script src="libs/js/jquery.min.js"></script>
+<script src="assets/js/jquery.ajax-loader.js"></script>
+<script>
+	var loader0 = $('.screen-lv2').ajaxLoader({
+		buttons: $('nav.l-1 a'),
+		enableControls: false,
+		vertical: true,
+		onLoadComplete: function() {
+			var loader1 = $('.screen-lv3').ajaxLoader({
+				viewportClass: 'tw-ajax-viewport',
+				layerClass: 'tw-ajax-layer',
+				buttons: $('nav.l-2 a'),
+				enableControls: false,
+				vertical: true,
+				onLoadComplete: function() {
+					$(loader0.viewport._window).height(loader0.currentLayer._height());
+
+					$('nav.l-3 a').on('click', function(event) {
+						event.preventDefault();
+						// save links array for controls usage
+						var links = $('nav.l-3 a');
+						var index = $(links).index(this);
+						loader1.currentLayer.clear(function() {
+							var loader2 = $(loader1.currentLayer._window).ajaxLoader({
+								viewportClass: 'tw-ajax-viewport',
+								layerClass: 'tw-ajax-layer',
+								buttons: $('nav.l-3 a'),
+								links: links,
+								enableControls: true,
+								vertical: false,
+								selfWindow: true,
+								loadButton: $(event.target),
+								currentIndex: index,
+								onLoadComplete: function() {
+									$(loader0.viewport._window).height(loader0.currentLayer._height());
+								}
+							});
+							loader2.init();
+						});						
+					})
+				}
+			});
+			loader1.init();
+		}
+	});
+	loader0.init();
+</script>
+
+<!-- <script src="assets/js/build/production.min.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* NAVIGATION styles */
+.main-nav__wrapper {
+
+}
+nav {
+	ul {
+		list-style: none;
+		padding: 0; margin: 0;
+		@include susy-clearfix;
+		li {
+			@include span(3 of 15);
+			&:last-child {
+				@include last;	
+			}
+		}
+	}
+	&.l-1 {
+		font-size: 18px;
+	}
+	&.l-2 {
+		font-size: 16px;
+	}
+	&.l-3 {
+		font-size: 14px;
+	}
+}

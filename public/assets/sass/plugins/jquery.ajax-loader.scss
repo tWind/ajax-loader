@@ -1,0 +1,46 @@
+header {
+	background: #CCC;
+}
+
+footer {
+	background: #CCC;
+}
+
+#content {
+	background: #999;
+}
+a {
+	color: #000; font-family: Tahoma;
+	text-decoration: none;
+	&:hover { text-decoration: underline;}
+	&.active { font-weight: bold;}
+}
+.tw-ajax-viewport, .tw-ajax-viewport2 {
+	position: relative; overflow: hidden;
+}
+.tw-ajax-layer, .tw-ajax-layer-self {
+	position: absolute; top: 0;
+	width: 100%;
+}
+.tw-ajax-controls {
+	position: relative;
+	> div {
+		display: block;
+		position: absolute;
+		height: 20px;
+		background: #FFF;
+		cursor: pointer;
+		&:first-child {
+			left: 0;
+		}
+		&:last-child {
+			right: 0;
+		}
+	}
+}
+
+.test {
+	width: 40px; height: 40px;
+	background: #000;
+	cursor: pointer;
+}

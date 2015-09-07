@@ -1,0 +1,14 @@
+.motion__wrapper {
+	display: none;
+	@include susy-breakpoint(960px) {
+		display: block;
+	}
+}
+.motion {
+	position: relative;
+	img {
+		display: inline-block;
+		position: absolute;
+		left: 50%;
+	}
+}

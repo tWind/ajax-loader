@@ -1,0 +1,5 @@
+.ui {
+	article { @include susy-clearfix; }
+	.col-1 { @include span(1 of 10); }
+	.col-2 { @include span(2 of 12); }
+}

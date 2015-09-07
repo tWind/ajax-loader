@@ -1,0 +1,23 @@
+body {
+	&.main {
+		section {
+			text-align: center;
+			&.order {
+
+				article {
+					
+					padding: 30px 0;
+					background: $white;
+					&:first-child {
+						@include susy-breakpoint(960px) {
+							margin-top: -120px;
+						}
+					}
+					.text {
+						@include container(85%);
+					}
+				}
+			}
+		}
+	}
+}
